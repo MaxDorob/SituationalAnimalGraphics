@@ -7,8 +7,8 @@
     <ProjectGuid>{8169BB2C-AEF8-42DE-B11C-B6D256B6E058}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Situational_Animal_Graphics</RootNamespace>
-    <AssemblyName>Situational Animal Graphics</AssemblyName>
+    <RootNamespace>SituationalAnimalGraphics</RootNamespace>
+    <AssemblyName>SituationalAnimalGraphics</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
