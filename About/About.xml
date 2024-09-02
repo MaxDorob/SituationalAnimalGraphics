@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+  <name>Situational Animal Graphics</name>
+  <author>Shashlichnik ;p (aka Шашлычник ;р)</author>
+  <supportedVersions>
+    <li>1.5</li>
+  </supportedVersions>
+  <packageId>shashlichnik.SituationalAnimalGraphics</packageId>
+  <modDependencies>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+  <url></url>
+  <description>
+    Framework for custom animal graphics for seasons, tamed state and resource taken from animal
+  </description>
+</ModMetaData>
