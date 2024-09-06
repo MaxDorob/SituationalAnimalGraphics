@@ -31,7 +31,7 @@ namespace SituationalAnimalGraphics
         }
         public static Graphic GetCustomGraphic(Pawn pawn)
         {
-            var ext = pawn.ageTracker.CurKindLifeStage as SeasonalGraphicsExtension;
+            var ext = pawn.ageTracker.CurKindLifeStage as SeasonalGraphics;
             if (ext != null)
             {
                 var map = pawn.Map;

@@ -8,7 +8,7 @@ using Verse;
 
 namespace SituationalAnimalGraphics
 {
-    public class SeasonalGraphicsExtension : PawnKindLifeStage
+    public class SeasonalGraphics : PawnKindLifeStage
     {
         public SeasonGraphic summer;
         public SeasonGraphic autumn;

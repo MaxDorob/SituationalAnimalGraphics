@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PawnRenderNode_AnimalPart_Patch.cs" />
-    <Compile Include="SeasonalGraphicsExtension.cs" />
+    <Compile Include="SeasonalGraphics.cs" />
     <Compile Include="SeasonGraphic.cs" />
     <Compile Include="SeasonWatcher.cs" />
     <Compile Include="StartUp.cs" />
