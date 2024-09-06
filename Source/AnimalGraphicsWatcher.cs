@@ -18,6 +18,10 @@ namespace SituationalAnimalGraphics
         public override void MapComponentTick()
         {
             base.MapComponentTick();
+            if (!map.IsHashIntervalTick(900))
+            {
+                return;
+            }
             foreach (var pawn in map.mapPawns.AllPawnsSpawned.Where(x=>!x.Dead && x.RaceProps.Animal && x.ageTracker.CurKindLifeStage is SeasonalGraphics))
             {
                 pawn.Drawer.renderer.renderTree.SetDirty();
