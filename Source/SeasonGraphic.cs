@@ -9,16 +9,16 @@ namespace SituationalAnimalGraphics
 {
     public class SeasonGraphic
     {
-        public GraphicData resourceTakenGraphicData;
+        public GraphicData resourceGatheredGraphicData;
         public float resourceTakenActiveUntil = 0.9f;
         public GraphicData tamedGraphicData;
         public GraphicData defaultGraphicData;
 
         public bool TryGetGraphicData(bool tamed, float resourcePercent, out GraphicData graphicData)
         {
-            if (resourceTakenGraphicData != null && resourcePercent < resourceTakenActiveUntil)
+            if (resourceGatheredGraphicData != null && resourcePercent < resourceTakenActiveUntil)
             {
-                graphicData = resourceTakenGraphicData;
+                graphicData = resourceGatheredGraphicData;
                 return true;
             }
             if (tamed && tamedGraphicData != null)
