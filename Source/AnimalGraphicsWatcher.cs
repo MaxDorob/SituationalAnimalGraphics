@@ -9,9 +9,9 @@ using Verse;
 
 namespace SituationalAnimalGraphics
 {
-    internal class SeasonWatcher : MapComponent
+    internal class AnimalGraphicsWatcher : MapComponent
     {
-        public SeasonWatcher(Map map) : base(map)
+        public AnimalGraphicsWatcher(Map map) : base(map)
         {
         }
 
