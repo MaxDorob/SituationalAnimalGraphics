@@ -12,7 +12,7 @@ namespace SituationalAnimalGraphics
         public EffecterDef resourceGathered;
         public GraphicData resourceGatheredGraphicData;
         public GraphicData resourceGatheredGraphicDataFemale;
-        public float resourceTakenActiveUntil = 0.9f;
+        public float resourceGatheredActiveUntil = 0.9f;
         public EffecterDef tamed;
         public GraphicData tamedGraphicData;
         public GraphicData tamedGraphicDataFemale;
