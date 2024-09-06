@@ -22,7 +22,7 @@ namespace SituationalAnimalGraphics
 
         public bool TryGetGraphicData(bool tamed, bool female, float resourcePercent, out GraphicData graphicData, out EffecterDef effecter)
         {
-            if (resourceGatheredGraphicData != null && resourcePercent < resourceTakenActiveUntil)
+            if (resourceGatheredGraphicData != null && resourcePercent < resourceGatheredActiveUntil)
             {
                 effecter = resourceGathered ?? defaultGraphicChangedEffect;
                 graphicData = female ? resourceGatheredGraphicDataFemale ?? resourceGatheredGraphicData : resourceGatheredGraphicData;
