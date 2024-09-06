@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!--Required patch-->
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+	
+	<!--Resource gathered example-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li</xpath>
+		<value>
+			<summer>
+				
+				<!--Graphic when resources are gathered from animal-->
+				<resourceGatheredGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepMaleWithoutWool</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.25</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</resourceGatheredGraphicData>
+				
+				<!--Optional threshold when resourceGatheredGraphicData is active. By default 0.9-->
+				<resourceGatheredActiveUntil>0.5</resourceGatheredActiveUntil>
+
+				<!--Optional, will be used defaultGraphicData if not specified for tamed animals-->
+				<tamedGraphicData>...</tamedGraphicData>
+
+				<!--Optional, if not specified then original graphics used-->
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepMale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.75</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</defaultGraphicData>
+				
+				<!--Female versions are optional-->
+				<tamedGraphicDataFemale>...</tamedGraphicDataFemale>
+				<resourceGatheredGraphicDataFemale>...</resourceGatheredGraphicDataFemale>
+				<defaultGraphicDataFemale>...</defaultGraphicDataFemale>
+				
+			</summer>
+
+			<!--Optional, filled in the same way as the summer block, if not specified will be used summer graphics (if it specified, otherwise classic graphic will be used)-->
+			<fall></fall>
+
+			<!--Optional, if not specified will be used fall graphics-->
+			<winter></winter>
+
+			<!--Optional, if not specified will be used winter graphics-->
+			<spring></spring>
+			
+		</value>
+	</Operation>
+
+	<!--Seasonal example-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li</xpath>
+		<value>
+			<summer>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepMaleSummerAndFall</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.75</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</defaultGraphicData>
+
+			</summer>
+
+			<winter>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepMaleWinterAndSpring</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.75</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</defaultGraphicData>
+
+			</winter>
+
+		</value>
+	</Operation>
+</Patch>
