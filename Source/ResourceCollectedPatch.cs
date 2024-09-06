@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using Verse.Noise;
 
 namespace SituationalAnimalGraphics
 {
@@ -13,7 +14,13 @@ namespace SituationalAnimalGraphics
     {
         static void Postfix(CompHasGatherableBodyResource __instance)
         {
-            (__instance.parent as Pawn).Drawer.renderer.renderTree.SetDirty();
+            var pawn = (__instance.parent as Pawn);
+            var map = pawn.Map;
+            pawn.Drawer.renderer.renderTree.SetDirty();
+            if (pawn.ageTracker.CurKindLifeStage is SeasonalGraphics seasonalGraphics && seasonalGraphics.TryGetGraphic(Utils.GetSeason(map, Find.TickManager.TicksAbs), pawn.Faction != null, pawn.gender == Gender.Female, pawn.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f, out _, out var effecter))
+            {
+                effecter?.Spawn(pawn.Position, map);
+            }
         }
     }
 }
