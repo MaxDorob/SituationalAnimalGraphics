@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PawnRenderNode_AnimalPart_Patch.cs" />
+    <Compile Include="ResourceCollectedPatch.cs" />
     <Compile Include="SeasonalGraphics.cs" />
     <Compile Include="SeasonGraphic.cs" />
     <Compile Include="AnimalGraphicsWatcher.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TamedPatch.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
