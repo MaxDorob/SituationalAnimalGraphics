@@ -10,7 +10,13 @@
 	
 	<!--Resource gathered example-->
 	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li</xpath>
+		<xpath>/Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li[1]</xpath>
+		<!--Each life stage has its own graphics, so be sure to patch them all (if needed)-->
+		<!--
+		<xpath>/Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li[2]</xpath>
+		...
+		<xpath>/Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li[4]</xpath>
+		-->
 		<value>
 			<summer>
 				
