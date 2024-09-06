@@ -11,7 +11,7 @@ namespace SituationalAnimalGraphics
     public class SeasonalGraphics : PawnKindLifeStage
     {
         public SeasonGraphic summer;
-        public SeasonGraphic autumn;
+        public SeasonGraphic fall;
         public SeasonGraphic winter;
         public SeasonGraphic spring;
         public bool TryGetGraphic(Season season, bool tamed, bool female, float resourcePercent, out GraphicData result, out EffecterDef effecter)
@@ -32,7 +32,7 @@ namespace SituationalAnimalGraphics
                     }
                     goto case Season.Fall;
                 case Season.Fall:
-                    if (autumn?.TryGetGraphicData(tamed, female, resourcePercent, out result, out effecter) ?? false)
+                    if (fall?.TryGetGraphicData(tamed, female, resourcePercent, out result, out effecter) ?? false)
                     {
                         return true;
                     }
