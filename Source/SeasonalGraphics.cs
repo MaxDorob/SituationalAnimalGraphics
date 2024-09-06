@@ -14,39 +14,40 @@ namespace SituationalAnimalGraphics
         public SeasonGraphic autumn;
         public SeasonGraphic winter;
         public SeasonGraphic spring;
-        public GraphicData GetGraphic(Season season, bool tamed, float resourcePercent)
+        public bool TryGetGraphic(Season season, bool tamed, float resourcePercent, out GraphicData result, out EffecterDef effecter)
         {
-            GraphicData result = null;
             switch (season)
             {
                 case Season.Spring:
-                    if(spring?.TryGetGraphicData(tamed, resourcePercent, out result) ?? false)
+                    if(spring?.TryGetGraphicData(tamed, resourcePercent, out result, out effecter) ?? false)
                     {
-                        return result;
+                        return true;
                     }
                     goto case Season.Winter;
                 case Season.PermanentWinter:
                 case Season.Winter:
-                    if (winter?.TryGetGraphicData(tamed, resourcePercent, out result) ?? false)
+                    if (winter?.TryGetGraphicData(tamed, resourcePercent, out result, out effecter) ?? false)
                     {
-                        return result;
+                        return true;
                     }
                     goto case Season.Fall;
                 case Season.Fall:
-                    if (autumn?.TryGetGraphicData(tamed, resourcePercent, out result) ?? false)
+                    if (autumn?.TryGetGraphicData(tamed, resourcePercent, out result, out effecter) ?? false)
                     {
-                        return result;
+                        return true;
                     }
                     goto case Season.Summer;
                 case Season.PermanentSummer:
                 case Season.Summer:
-                    if (summer?.TryGetGraphicData(tamed, resourcePercent, out result) ?? false)
+                    if (summer?.TryGetGraphicData(tamed, resourcePercent, out result, out effecter) ?? false)
                     {
-                        return result;
+                        return true;
                     }
                     break;
             }
-            return result;
+            result = null;
+            effecter = null;
+            return false;
         }
     }
 }
