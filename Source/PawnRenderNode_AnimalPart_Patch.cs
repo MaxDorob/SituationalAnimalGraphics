@@ -32,7 +32,7 @@ namespace SituationalAnimalGraphics
         public static Graphic GetCustomGraphic(Pawn pawn)
         {
             var ext = pawn.ageTracker.CurKindLifeStage as SeasonalGraphics;
-            if (ext != null && ext.TryGetGraphic(Utils.GetSeason(pawn.Map, pawn.Dead ? pawn.Corpse?.timeOfDeath ?? Find.TickManager.TicksAbs : Find.TickManager.TicksAbs), pawn.Faction != null, pawn.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f, out var result, out _))
+            if (ext != null && ext.TryGetGraphic(Utils.GetSeason(pawn.Map, pawn.Dead ? pawn.Corpse?.timeOfDeath ?? Find.TickManager.TicksAbs : Find.TickManager.TicksAbs), pawn.Faction != null, pawn.gender == Gender.Female, pawn.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f, out var result, out _))
             {
                 return result?.Graphic;
             }

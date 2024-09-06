@@ -11,28 +11,31 @@ namespace SituationalAnimalGraphics
     {
         public EffecterDef resourceGathered;
         public GraphicData resourceGatheredGraphicData;
+        public GraphicData resourceGatheredGraphicDataFemale;
         public float resourceTakenActiveUntil = 0.9f;
         public EffecterDef tamed;
         public GraphicData tamedGraphicData;
+        public GraphicData tamedGraphicDataFemale;
         public EffecterDef defaultGraphicChangedEffect;
         public GraphicData defaultGraphicData;
+        public GraphicData defaultGraphicDataFemale;
 
-        public bool TryGetGraphicData(bool tamed, float resourcePercent, out GraphicData graphicData, out EffecterDef effecter)
+        public bool TryGetGraphicData(bool tamed, bool female, float resourcePercent, out GraphicData graphicData, out EffecterDef effecter)
         {
             if (resourceGatheredGraphicData != null && resourcePercent < resourceTakenActiveUntil)
             {
                 effecter = resourceGathered ?? defaultGraphicChangedEffect;
-                graphicData = resourceGatheredGraphicData;
+                graphicData = female ? resourceGatheredGraphicDataFemale ?? resourceGatheredGraphicData : resourceGatheredGraphicData;
                 return true;
             }
             if (tamed && tamedGraphicData != null)
             {
                 effecter = this.tamed ?? defaultGraphicChangedEffect;
-                graphicData = tamedGraphicData;
+                graphicData = female ? tamedGraphicDataFemale ?? tamedGraphicData : tamedGraphicData;
                 return true;
             }
             effecter = defaultGraphicChangedEffect;
-            graphicData = defaultGraphicData;
+            graphicData = female ? defaultGraphicDataFemale ?? defaultGraphicData : defaultGraphicData;
             return graphicData != null;
         }
     }
