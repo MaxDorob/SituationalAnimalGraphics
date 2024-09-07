@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="Cat"]/lifeStages/li</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/PawnKindDef[defName="Cat"]/lifeStages/li/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Pawn/Animal/Cat/CatFeral</texPath>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Cat"]/lifeStages/li[1]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/Cat/Cat</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>0.6</drawSize>
+					<color>(189,171,159)</color>
+				</tamedGraphicData>
+
+			</summer>
+
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Cat"]/lifeStages/li[2]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/Cat/Cat</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>0.8</drawSize>
+					<color>(189,171,159)</color>
+				</tamedGraphicData>
+
+			</summer>
+
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Cat"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/Cat/Cat</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.0</drawSize>
+					<color>(189,171,159)</color>
+				</tamedGraphicData>
+				
+			</summer>
+			
+		</value>
+	</Operation>
+	
+</Patch>
