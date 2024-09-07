@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li[3]</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+				
+				<resourceGatheredGraphicData>
+					<texPath>Things/Pawn/Animal/Alpaca/AlpacaSheared</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.2</drawSize>
+					<color>(180,148,109)</color>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</resourceGatheredGraphicData>
+				
+				<resourceGatheredActiveUntil>0.5</resourceGatheredActiveUntil>
+				
+			</summer>
+			
+		</value>
+	</Operation>
+	
+</Patch>
