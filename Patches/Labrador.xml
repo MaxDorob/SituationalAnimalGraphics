@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="LabradorRetriever"]/lifeStages/li</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/PawnKindDef[defName="LabradorRetriever"]/lifeStages/li/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Pawn/Animal/Labrador/LabradorFeral</texPath>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="LabradorRetriever"]/lifeStages/li[1]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/Labrador/Labrador</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>0.95</drawSize>
+					<color>(220,198,160)</color>
+				</tamedGraphicData>
+
+			</summer>
+
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="LabradorRetriever"]/lifeStages/li[2]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/Labrador/Labrador</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.35</drawSize>
+					<color>(220,198,160)</color>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</tamedGraphicData>
+
+			</summer>
+
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="LabradorRetriever"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/Labrador/Labrador</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.6</drawSize>
+					<color>(220,198,160)</color>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</tamedGraphicData>
+				
+			</summer>
+			
+		</value>
+	</Operation>
+	
+</Patch>
