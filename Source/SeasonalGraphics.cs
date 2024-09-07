@@ -14,32 +14,32 @@ namespace SituationalAnimalGraphics
         public SeasonGraphic fall;
         public SeasonGraphic winter;
         public SeasonGraphic spring;
-        public bool TryGetGraphic(Season season, bool tamed, bool female, float resourcePercent, out GraphicData result, out EffecterDef effecter)
+        public bool TryGetGraphic(Season season, bool tamed, bool female, float resourcePercent, out GraphicData result, out GraphicData dessicated, out EffecterDef effecter)
         {
             switch (season)
             {
                 case Season.Spring:
-                    if(spring?.TryGetGraphicData(tamed, female, resourcePercent, out result, out effecter) ?? false)
+                    if(spring?.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter) ?? false)
                     {
                         return true;
                     }
                     goto case Season.Winter;
                 case Season.PermanentWinter:
                 case Season.Winter:
-                    if (winter?.TryGetGraphicData(tamed, female, resourcePercent, out result, out effecter) ?? false)
+                    if (winter?.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter) ?? false)
                     {
                         return true;
                     }
                     goto case Season.Fall;
                 case Season.Fall:
-                    if (fall?.TryGetGraphicData(tamed, female, resourcePercent, out result, out effecter) ?? false)
+                    if (fall?.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter) ?? false)
                     {
                         return true;
                     }
                     goto case Season.Summer;
                 case Season.PermanentSummer:
                 case Season.Summer:
-                    if (summer?.TryGetGraphicData(tamed, female, resourcePercent, out result, out effecter) ?? false)
+                    if (summer?.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter) ?? false)
                     {
                         return true;
                     }
@@ -47,6 +47,7 @@ namespace SituationalAnimalGraphics
             }
             result = null;
             effecter = null;
+            dessicated = null;
             return false;
         }
     }

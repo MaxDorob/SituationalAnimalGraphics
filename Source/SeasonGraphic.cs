@@ -19,9 +19,11 @@ namespace SituationalAnimalGraphics
         public EffecterDef defaultGraphicChangedEffect;
         public GraphicData defaultGraphicData;
         public GraphicData defaultGraphicDataFemale;
-
-        public bool TryGetGraphicData(bool tamed, bool female, float resourcePercent, out GraphicData graphicData, out EffecterDef effecter)
+        public GraphicData dessicatedBodyGraphicData;
+        public GraphicData dessicatedBodyGraphicDataFemale;
+        public bool TryGetGraphicData(bool tamed, bool female, float resourcePercent, out GraphicData graphicData, out GraphicData dessicatedBodyGraphicData, out EffecterDef effecter)
         {
+            dessicatedBodyGraphicData = female ? dessicatedBodyGraphicDataFemale ?? this.dessicatedBodyGraphicData : this.dessicatedBodyGraphicData;
             if (resourceGatheredGraphicData != null && resourcePercent < resourceGatheredActiveUntil)
             {
                 effecter = resourceGathered ?? defaultGraphicChangedEffect;

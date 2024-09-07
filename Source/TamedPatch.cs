@@ -18,7 +18,7 @@ namespace SituationalAnimalGraphics
             {
                 __instance.Drawer.renderer.renderTree.SetDirty();
                 var map = __instance.Map;
-                if (__instance.ageTracker.CurKindLifeStage is SeasonalGraphics seasonalGraphics && seasonalGraphics.TryGetGraphic(Utils.GetSeason(map, Find.TickManager.TicksAbs), __instance.Faction != null, __instance.gender == Gender.Female, __instance.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f, out _, out var effecter))
+                if (__instance.ageTracker.CurKindLifeStage is SeasonalGraphics seasonalGraphics && seasonalGraphics.TryGetGraphic(Utils.GetSeason(map, Find.TickManager.TicksAbs), __instance.Faction != null, __instance.gender == Gender.Female, __instance.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f, out _, out _, out var effecter))
                 {
                     effecter?.Spawn(__instance.Position, map);
                 }

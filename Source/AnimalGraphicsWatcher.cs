@@ -25,7 +25,7 @@ namespace SituationalAnimalGraphics
             foreach (var pawn in map.mapPawns.AllPawnsSpawned.Where(x => !x.Dead && x.RaceProps.Animal && x.ageTracker.CurKindLifeStage is SeasonalGraphics))
             {
                 pawn.Drawer.renderer.renderTree.SetDirty();
-                if ((pawn.ageTracker.CurKindLifeStage as SeasonalGraphics).TryGetGraphic(Utils.GetSeason(map, Find.TickManager.TicksAbs), pawn.Faction != null, pawn.gender == Gender.Female, pawn.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f, out _, out var effecter))
+                if ((pawn.ageTracker.CurKindLifeStage as SeasonalGraphics).TryGetGraphic(Utils.GetSeason(map, Find.TickManager.TicksAbs), pawn.Faction != null, pawn.gender == Gender.Female, pawn.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f, out _, out _, out var effecter))
                 {
                     effecter?.Spawn(pawn.Position, map);
                 }

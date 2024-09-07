@@ -12,6 +12,10 @@ namespace SituationalAnimalGraphics
     {
         public static Season GetSeason(Map map, long tick)
         {
+            if (map == null)
+            {
+                Log.Warning("Map is null");
+            }
             float latitude = (map != null) ? Find.WorldGrid.LongLatOf(map.Tile).y : 0f;
             float longitude = (map != null) ? Find.WorldGrid.LongLatOf(map.Tile).x : 0f;
             return GenDate.Season(tick, latitude, longitude);
