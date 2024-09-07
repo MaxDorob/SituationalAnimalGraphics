@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="YorkshireTerrier"]/lifeStages/li</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/PawnKindDef[defName="YorkshireTerrier"]/lifeStages/li/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Pawn/Animal/YorkshireTerrier/YorkshireTerrierFeral</texPath>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="YorkshireTerrier"]/lifeStages/li[1]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/YorkshireTerrier/YorkshireTerrier</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>0.48</drawSize>
+				</tamedGraphicData>
+
+			</summer>
+
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="YorkshireTerrier"]/lifeStages/li[2]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/YorkshireTerrier/YorkshireTerrier</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>0.75</drawSize>
+				</tamedGraphicData>
+				
+				<tamedGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/YorkshireTerrier/YorkshireTerrier</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>0.73</drawSize>
+				</tamedGraphicDataFemale>
+				
+			</summer>
+
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="YorkshireTerrier"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/YorkshireTerrier/YorkshireTerrier</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>0.9</drawSize>
+					<shadowData>
+						<volume>(0.20, 0.3, 0.20)</volume>
+						<offset>(0,0,-0.08)</offset>
+					</shadowData>
+				</tamedGraphicData>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/YorkshireTerrier/YorkshireTerrier</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>0.89</drawSize>
+				</tamedGraphicData>
+				
+			</summer>
+			
+		</value>
+	</Operation>
+	
+</Patch>
