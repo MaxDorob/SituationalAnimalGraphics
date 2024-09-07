@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="Fox_Arctic"]/lifeStages/li</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Fox_Arctic"]/lifeStages/li[1]</xpath>
+		<value>
+			<summer>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_ArcticSummer</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.0</drawSize>
+				</defaultGraphicData>				
+
+			</summer>
+
+			<fall>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_ArcticSpringFall</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.0</drawSize>
+				</defaultGraphicData>
+
+			</fall>
+
+			<winter>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_Arctic</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.0</drawSize>
+				</defaultGraphicData>
+
+			</winter>
+
+			<spring>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_ArcticSpringFall</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.0</drawSize>
+				</defaultGraphicData>
+
+			</spring>
+			
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Fox_Arctic"]/lifeStages/li[2]</xpath>
+		<value>
+			<summer>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_ArcticSummer</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.2</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</defaultGraphicData>
+
+			</summer>
+
+			<fall>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_ArcticSpringFall</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.2</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</defaultGraphicData>
+
+			</fall>
+
+			<winter>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_Arctic</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.2</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</defaultGraphicData>
+
+			</winter>
+
+			<spring>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_ArcticSpringFall</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.2</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</defaultGraphicData>
+
+			</spring>
+
+		</value>
+	</Operation>
+
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Fox_Arctic"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_ArcticSummer</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.75</drawSize>
+				</defaultGraphicData>
+
+			</summer>
+
+			<fall>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_ArcticSpringFall</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.75</drawSize>
+				</defaultGraphicData>
+
+			</fall>
+
+			<winter>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_Arctic</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.75</drawSize>
+				</defaultGraphicData>
+
+			</winter>
+
+			<spring>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Fox_Arctic/Fox_ArcticSpringFall</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.75</drawSize>
+				</defaultGraphicData>
+
+			</spring>
+
+		</value>
+	</Operation>
+	
+</Patch>
