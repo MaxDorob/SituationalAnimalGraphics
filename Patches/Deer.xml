@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="Deer"]/lifeStages/li[3]</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Deer"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Deer/DeerMaleSummer</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.25</drawSize>
+					<color>(156,112,62)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</defaultGraphicData>
+
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Deer/Dessicated_DeerMaleSummer</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3.6</drawSize>
+				</dessicatedBodyGraphicData>
+
+
+				<defaultGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Deer/DeerFemale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.25</drawSize>
+					<color>(188,146,110)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</defaultGraphicDataFemale>
+				<dessicatedBodyGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Deer/Dessicated_DeerFemale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.8</drawSize>
+				</dessicatedBodyGraphicDataFemale>
+
+
+			</summer>
+
+			<fall>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Deer/DeerMaleFall</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.25</drawSize>
+					<color>(156,112,62)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</defaultGraphicData>
+
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Deer/Dessicated_DeerMaleFall</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3.6</drawSize>
+				</dessicatedBodyGraphicData>
+
+
+				<defaultGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Deer/DeerFemale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.25</drawSize>
+					<color>(188,146,110)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</defaultGraphicDataFemale>
+				<dessicatedBodyGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Deer/Dessicated_DeerFemale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.8</drawSize>
+				</dessicatedBodyGraphicDataFemale>
+
+
+			</fall>
+
+			<winter>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Deer/DeerMaleWinter</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.25</drawSize>
+					<color>(156,112,62)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</defaultGraphicData>
+
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Deer/Dessicated_DeerMaleWinter</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3.6</drawSize>
+				</dessicatedBodyGraphicData>
+
+
+				<defaultGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Deer/DeerFemale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.25</drawSize>
+					<color>(188,146,110)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</defaultGraphicDataFemale>
+				<dessicatedBodyGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Deer/Dessicated_DeerFemale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.8</drawSize>
+				</dessicatedBodyGraphicDataFemale>
+
+
+			</winter>
+
+			<spring>
+
+				<defaultGraphicData>
+					<texPath>Things/Pawn/Animal/Deer/DeerMaleSpring</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.25</drawSize>
+					<color>(156,112,62)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</defaultGraphicData>
+
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Deer/Dessicated_DeerMaleSpring</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3.6</drawSize>
+				</dessicatedBodyGraphicData>
+
+
+				<defaultGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Deer/DeerFemale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.25</drawSize>
+					<color>(188,146,110)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</defaultGraphicDataFemale>
+				<dessicatedBodyGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Deer/Dessicated_DeerFemale</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.8</drawSize>
+				</dessicatedBodyGraphicDataFemale>
+
+
+			</spring>
+		</value>
+	</Operation>
+
+</Patch>
