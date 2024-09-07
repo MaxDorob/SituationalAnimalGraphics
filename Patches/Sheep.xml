@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="Sheep"]/lifeStages/li</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+
+	<!--Life stage uses female graphics-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/PawnKindDef[defName="Sheep"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Pawn/Animal/Sheep/SheepMaleFeral</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/PawnKindDef[defName="Sheep"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Pawn/Animal/Sheep/SheepMaleFeral</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/PawnKindDef[defName="Sheep"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Pawn/Animal/Sheep/SheepFemaleFeral</texPath>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/PawnKindDef[defName="Sheep"]/lifeStages/li/femaleGraphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Pawn/Animal/Sheep/SheepFemaleFeral</texPath>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Sheep"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+
+				<resourceGatheredGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepMaleSheared</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.75</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</resourceGatheredGraphicData>
+
+				<resourceGatheredGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Sheep/SheepFemaleSheared</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.70</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</resourceGatheredGraphicDataFemale>
+
+				<resourceGatheredActiveUntil>0.5</resourceGatheredActiveUntil>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepMale</texPath>
+					<drawSize>1.75</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</tamedGraphicData>
+				<tamedGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Sheep/SheepFemale</texPath>
+					<drawSize>1.70</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</tamedGraphicDataFemale>
+
+			</summer>
+
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Sheep"]/lifeStages/li[2]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepMale</texPath>
+					<drawSize>1.30</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</tamedGraphicData>
+				<tamedGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Sheep/SheepFemale</texPath>
+					<drawSize>1.30</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</tamedGraphicDataFemale>
+
+			</summer>
+
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Sheep"]/lifeStages/li[1]</xpath>
+		<value>
+			<summer>
+
+				<tamedGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepFemale</texPath>
+					<drawSize>0.6</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.3, 0.3)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</tamedGraphicData>
+				<!--<tamedGraphicDataFemale>
+					<texPath>Things/Pawn/Animal/Sheep/SheepFemale</texPath>
+					<drawSize>0.6</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.3, 0.3)</volume>
+						<offset>(0,0,-0.2)</offset>
+					</shadowData>
+				</tamedGraphicDataFemale>-->
+
+			</summer>
+
+		</value>
+	</Operation>
+
+</Patch>
