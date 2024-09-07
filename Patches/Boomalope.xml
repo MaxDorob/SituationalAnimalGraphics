@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="Boomalope"]/lifeStages/li[3]</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="Boomalope"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+				
+				<resourceGatheredGraphicData>
+					<texPath>Things/Pawn/Animal/Boomalope/BoomalopeDeflate</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<color>(176,150,106)</color>
+					<drawSize>2.2</drawSize>
+					<shaderType>CutoutComplex</shaderType>
+					<shadowData>
+						<volume>(0.8, 0.6, 0.6)</volume>
+						<offset>(0,0,-0.3)</offset>
+					</shadowData>
+				</resourceGatheredGraphicData>
+				
+				<resourceGatheredActiveUntil>0.7</resourceGatheredActiveUntil>
+				
+			</summer>
+			
+		</value>
+	</Operation>
+	
+</Patch>
