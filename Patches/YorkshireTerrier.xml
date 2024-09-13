@@ -67,11 +67,11 @@
 					</shadowData>
 				</tamedGraphicData>
 
-				<tamedGraphicData>
+				<tamedGraphicDataFemale>
 					<texPath>Things/Pawn/Animal/YorkshireTerrier/YorkshireTerrier</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>0.89</drawSize>
-				</tamedGraphicData>
+				</tamedGraphicDataFemale>
 				
 			</summer>
 			
