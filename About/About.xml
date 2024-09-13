@@ -20,6 +20,8 @@
   </loadAfter>
   <url></url>
   <description>
-    Framework for custom animal graphics for seasons, tamed state and resource gathered from animals
+	  Situational Animal Graphics is a framework mod that adds support for animal graphics that change actively depending on in-game circumstances. Currently it supports resource availability, seasonal changes, and wild/tamed status.
+
+	  A vanilla set of graphics is included with examples of how this mod may be used, including sheep that become shorn after giving wool, boomalope that deflate after giving chemfuel, animals that grow antlers or change their coat with the seasons, and dogs that go from feral and unkept to tame.
   </description>
 </ModMetaData>
