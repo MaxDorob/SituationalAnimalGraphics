@@ -14,36 +14,46 @@ namespace SituationalAnimalGraphics
         public SeasonGraphic fall;
         public SeasonGraphic winter;
         public SeasonGraphic spring;
-        public bool TryGetGraphic(Season season, bool tamed, bool female, float resourcePercent, out GraphicData result, out GraphicData dessicated, out EffecterDef effecter)
+        private IEnumerable<SeasonGraphic> GraphicsForSeason(Season season)
         {
             switch (season)
             {
                 case Season.Spring:
-                    if(spring?.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter) ?? false)
+                    if (spring != null)
                     {
-                        return true;
+                        yield return spring;
                     }
                     goto case Season.Winter;
                 case Season.PermanentWinter:
                 case Season.Winter:
-                    if (winter?.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter) ?? false)
+                    if (winter != null)
                     {
-                        return true;
+                        yield return winter;
                     }
                     goto case Season.Fall;
                 case Season.Fall:
-                    if (fall?.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter) ?? false)
+                    if (fall != null)
                     {
-                        return true;
+                        yield return fall;
                     }
                     goto case Season.Summer;
                 case Season.PermanentSummer:
                 case Season.Summer:
-                    if (summer?.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter) ?? false)
+                    if (summer != null)
                     {
-                        return true;
+                        yield return summer;
                     }
                     break;
+            }
+        }
+        public bool TryGetGraphic(Season season, bool tamed, bool female, float resourcePercent, out GraphicData result, out GraphicData dessicated, out EffecterDef effecter)
+        {
+            foreach (var seasonGraphic in GraphicsForSeason(season))
+            {
+                if (seasonGraphic.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter))
+                {
+                    return true;
+                }
             }
             result = null;
             effecter = null;
