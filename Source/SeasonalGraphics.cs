@@ -14,41 +14,94 @@ namespace SituationalAnimalGraphics
         public SeasonGraphic fall;
         public SeasonGraphic winter;
         public SeasonGraphic spring;
-        private IEnumerable<SeasonGraphic> GraphicsForSeason(Season season)
+
+        public List<SubSeasonGraphics> summerGraphics;
+        public List<SubSeasonGraphics> fallGraphics;
+        public List<SubSeasonGraphics> winterGraphics;
+        public List<SubSeasonGraphics> springGraphics;
+
+        private SeasonGraphic GetFromSubSeason(IEnumerable<SubSeasonGraphics> subSeasonGraphics, int day)
         {
+            if (subSeasonGraphics.EnumerableNullOrEmpty())
+            {
+                return null;
+            }
+            return subSeasonGraphics.OrderByDescending(x => x.day).FirstOrDefault(x => x.day < day)?.graphics;
+        }
+        private IEnumerable<SeasonGraphic> GraphicsForSeason(Season season, int day)
+        {
+            SeasonGraphic subGraphics;
+            switch (season)
+            {
+
+                case Season.PermanentSummer:
+                    if (!summerGraphics.NullOrEmpty())
+                    {
+                        yield return summerGraphics.OrderBy(x=> x.day).LastOrDefault().graphics;
+                        yield break;
+                    }
+                    break;
+                case Season.PermanentWinter:
+                    if (!winterGraphics.NullOrEmpty())
+                    {
+                        yield return winterGraphics.LastOrDefault().graphics;
+                        yield break;
+                    }
+                    break;
+            }
             switch (season)
             {
                 case Season.Spring:
-                    if (spring != null)
+                    subGraphics = GetFromSubSeason(springGraphics, day);
+                    if (subGraphics != null)
+                    {
+                        yield return subGraphics;
+                    }
+                    else if (spring != null)
                     {
                         yield return spring;
                     }
                     goto case Season.Winter;
                 case Season.PermanentWinter:
                 case Season.Winter:
-                    if (winter != null)
+                    subGraphics = GetFromSubSeason(winterGraphics, day);
+                    if (subGraphics != null)
+                    {
+                        yield return subGraphics;
+                    }
+                    else if (winter != null)
                     {
                         yield return winter;
                     }
                     goto case Season.Fall;
                 case Season.Fall:
-                    if (fall != null)
+                    subGraphics = GetFromSubSeason(fallGraphics, day);
+                    if (subGraphics != null)
+                    {
+                        yield return subGraphics;
+                    }
+                    else if (fall != null)
                     {
                         yield return fall;
                     }
                     goto case Season.Summer;
                 case Season.PermanentSummer:
                 case Season.Summer:
-                    if (summer != null)
+                    subGraphics = GetFromSubSeason(summerGraphics, day);
+                    if (subGraphics != null)
+                    {
+                        yield return subGraphics;
+                    }
+                    else if (summer != null)
                     {
                         yield return summer;
                     }
                     break;
             }
         }
-        public bool TryGetGraphic(Season season, bool tamed, bool female, float resourcePercent, out GraphicData result, out GraphicData dessicated, out EffecterDef effecter)
+        public bool TryGetGraphic(Season season, int day, bool tamed, bool female, float resourcePercent, out GraphicData result, out GraphicData dessicated, out EffecterDef effecter)
         {
-            foreach (var seasonGraphic in GraphicsForSeason(season))
+            foreach (var seasonGraphic in GraphicsForSeason(season, day))
             {
                 if (seasonGraphic.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter))
                 {
