@@ -15,6 +15,7 @@ namespace SituationalAnimalGraphics
         static void Postfix(CompHasGatherableBodyResource __instance)
         {
             var pawn = __instance.parent as Pawn;
+            pawn.Drawer.renderer.renderTree.SetDirty();
             if (pawn.TryGetSeasonalGraphic(out _, out _, out var effecter))
             {
                 effecter?.Spawn(pawn.Position, pawn.Map);

@@ -22,23 +22,21 @@ namespace SituationalAnimalGraphics
         }
         internal static bool TryGetSeasonalGraphic(this Pawn pawn, out GraphicData result, out GraphicData dessicated, out EffecterDef effecter)
         {
-            var map = pawn.Map;
-            pawn.Drawer.renderer.renderTree.SetDirty();
-            var pregnancy = pawn.health.hediffSet.GetFirstHediff<Hediff_Pregnant>();
-            var pregnancyDay = pregnancy == null ? -1 : pawn.RaceProps.gestationPeriodDays * pregnancy.GestationProgress;
-            var countOfYoung = pregnancy == null ? -1 : 1;
-            var season = Utils.GetSeason(map, Find.TickManager.TicksAbs);
-            var day = GenLocalDate.DayOfSeason(pawn) + 1;
-            bool tamed = pawn.Faction != null;
-            bool female = pawn.gender == Gender.Female;
-            var resourcePercent = pawn.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f;
-            if (pawn.ageTracker.CurKindLifeStage is SeasonalGraphics seasonalGraphics && seasonalGraphics.TryGetGraphic(season, day, tamed, female, resourcePercent, countOfYoung, (int)pregnancyDay, out result, out dessicated, out effecter))
-            {
-                Log.Message("True");
-                return true;
+            if (pawn.ageTracker.CurKindLifeStage is SeasonalGraphics seasonalGraphics) {
+                var map = pawn.Map;
+                var pregnancy = pawn.health.hediffSet.GetFirstHediff<Hediff_Pregnant>();
+                var pregnancyDay = pregnancy == null ? -1 : pawn.RaceProps.gestationPeriodDays * pregnancy.GestationProgress;
+                var countOfYoung = pregnancy == null ? -1 : 1;
+                var season = Utils.GetSeason(map, Find.TickManager.TicksAbs);
+                var day = GenLocalDate.DayOfSeason(pawn) + 1;
+                bool tamed = pawn.Faction != null;
+                bool female = pawn.gender == Gender.Female;
+                var resourcePercent = pawn.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f;
+                if (seasonalGraphics.TryGetGraphic(season, day, tamed, female, resourcePercent, countOfYoung, (int)pregnancyDay, out result, out dessicated, out effecter))
+                {
+                    return true;
+                }
             }
-
-            Log.Message("False");
             result = null;
             dessicated = null;
             effecter = null;
