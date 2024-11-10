@@ -48,8 +48,7 @@ namespace SituationalAnimalGraphics
         }
         public static Graphic GetCustomGraphic(Pawn pawn)
         {
-            var ext = pawn.ageTracker.CurKindLifeStage as SeasonalGraphics;
-            if (ext != null && ext.TryGetGraphic(Utils.GetSeason(pawn.Map ?? pawn.Corpse?.Map, pawn.Dead ? pawn.Corpse.timeOfDeath + Find.TickManager.gameStartAbsTick : Find.TickManager.TicksAbs), GenLocalDate.DayOfSeason(pawn) + 1, pawn.Faction != null, pawn.gender == Gender.Female, pawn.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f, out var result, out _, out _))
+            if (pawn.TryGetSeasonalGraphic(out var result, out _, out var effecter))
             {
                 return result?.Graphic;
             }
@@ -57,8 +56,7 @@ namespace SituationalAnimalGraphics
         }
         public static Graphic GetCustomDessicatedGraphic(Pawn pawn)
         {
-            var ext = pawn.ageTracker.CurKindLifeStage as SeasonalGraphics;
-            if (ext != null && ext.TryGetGraphic(Utils.GetSeason(pawn.Map ?? pawn.Corpse?.Map, pawn.Corpse?.timeOfDeath + Find.TickManager.gameStartAbsTick ?? Find.TickManager.TicksAbs), GenLocalDate.DayOfSeason(pawn) + 1, pawn.Faction != null, pawn.gender == Gender.Female, pawn.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f, out _, out var result, out _))
+            if (pawn.TryGetSeasonalGraphic(out _, out var result, out var effecter))
             {
                 return result?.GraphicColoredFor(pawn);
             }

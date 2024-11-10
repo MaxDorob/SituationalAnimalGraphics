@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CompHasGatherableBodyResource_Patch.cs" />
     <Compile Include="PawnRenderNode_AnimalPart_Patch.cs" />
+    <Compile Include="PregnancyGraphicsByCount.cs" />
     <Compile Include="ResourceCollectedPatch.cs" />
     <Compile Include="SeasonalGraphics.cs" />
     <Compile Include="SeasonGraphic.cs" />

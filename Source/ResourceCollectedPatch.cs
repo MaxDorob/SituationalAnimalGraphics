@@ -14,12 +14,10 @@ namespace SituationalAnimalGraphics
     {
         static void Postfix(CompHasGatherableBodyResource __instance)
         {
-            var pawn = (__instance.parent as Pawn);
-            var map = pawn.Map;
-            pawn.Drawer.renderer.renderTree.SetDirty();
-            if (pawn.ageTracker.CurKindLifeStage is SeasonalGraphics seasonalGraphics && seasonalGraphics.TryGetGraphic(Utils.GetSeason(map, Find.TickManager.TicksAbs), GenLocalDate.DayOfSeason(pawn) + 1, pawn.Faction != null, pawn.gender == Gender.Female, pawn.TryGetComp<CompHasGatherableBodyResource>()?.Fullness ?? 1f, out _, out _, out var effecter))
+            var pawn = __instance.parent as Pawn;
+            if (pawn.TryGetSeasonalGraphic(out _, out _, out var effecter))
             {
-                effecter?.Spawn(pawn.Position, map);
+                effecter?.Spawn(pawn.Position, pawn.Map);
             }
         }
     }

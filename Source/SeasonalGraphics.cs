@@ -99,11 +99,11 @@ namespace SituationalAnimalGraphics
                     break;
             }
         }
-        public bool TryGetGraphic(Season season, int day, bool tamed, bool female, float resourcePercent, out GraphicData result, out GraphicData dessicated, out EffecterDef effecter)
+        public bool TryGetGraphic(Season season, int day, bool tamed, bool female, float resourcePercent, int youngCount, int pregnancyDay, out GraphicData result, out GraphicData dessicated, out EffecterDef effecter)
         {
             foreach (var seasonGraphic in GraphicsForSeason(season, day))
             {
-                if (seasonGraphic.TryGetGraphicData(tamed, female, resourcePercent, out result, out dessicated, out effecter))
+                if (seasonGraphic.TryGetGraphicData(tamed, female, resourcePercent, youngCount, pregnancyDay, out result, out dessicated, out effecter))
                 {
                     return true;
                 }

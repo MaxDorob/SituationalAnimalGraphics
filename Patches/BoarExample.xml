@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+
+				<pregnancyGraphicsByCount>
+					<li>
+						<graphicsByDays>
+							<li>
+								<day>0</day>
+								<graphicData>
+									<texPath>Things/Pawn/Animal/Cat/Cat</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>0.8</drawSize>
+									<color>(189,171,159)</color>
+								</graphicData>
+							</li>
+							<li>
+								<day>2</day>
+								<graphicData>
+									<texPath>Things/Pawn/Animal/Cat/Cat</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>1.0</drawSize>
+									<color>(189,171,159)</color>
+								</graphicData>
+							</li>
+							<li>
+								<day>4</day>
+								<graphicData>
+									<texPath>Things/Pawn/Animal/Cat/Cat</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>4.0</drawSize>
+									<color>(189,171,159)</color>
+								</graphicData>
+							</li>
+						</graphicsByDays>
+					</li>
+				</pregnancyGraphicsByCount>
+
+
+			</summer>
+
+		</value>
+	</Operation>
+
+	
+</Patch>
