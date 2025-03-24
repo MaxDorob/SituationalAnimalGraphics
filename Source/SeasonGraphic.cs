@@ -25,7 +25,7 @@ namespace SituationalAnimalGraphics
         public bool TryGetGraphicData(bool tamed, bool female, float resourcePercent, int youngCount, int pregnancyDay, out GraphicData graphicData, out GraphicData dessicatedBodyGraphicData, out EffecterDef effecter)
         {
             dessicatedBodyGraphicData = female ? dessicatedBodyGraphicDataFemale ?? this.dessicatedBodyGraphicData : this.dessicatedBodyGraphicData;
-            if (pregnancyDay >= 0 && pregnancyGraphicsByCount.Count > 0)
+            if (pregnancyDay >= 0 && pregnancyGraphicsByCount != null && pregnancyGraphicsByCount.Count > 0)
             {
                 effecter = defaultGraphicChangedEffect;
                 graphicData = pregnancyGraphicsByCount[Math.Min(youngCount - 1, pregnancyGraphicsByCount.Count)].graphicsByDays?.LastOrDefault(x => x.day <= pregnancyDay)?.graphicData;
