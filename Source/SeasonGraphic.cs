@@ -28,7 +28,12 @@ namespace SituationalAnimalGraphics
             if (pregnancyDay >= 0 && pregnancyGraphicsByCount != null && pregnancyGraphicsByCount.Count > 0)
             {
                 effecter = defaultGraphicChangedEffect;
-                graphicData = pregnancyGraphicsByCount[Math.Min(youngCount - 1, pregnancyGraphicsByCount.Count)].graphicsByDays?.LastOrDefault(x => x.day <= pregnancyDay)?.graphicData;
+                var pregancyState = pregnancyGraphicsByCount[Math.Min(youngCount - 1, pregnancyGraphicsByCount.Count)].graphicsByDays?.LastOrDefault(x => x.day <= pregnancyDay);
+                graphicData = pregancyState?.graphicData;
+                if (pregancyState != null)
+                {
+                    dessicatedBodyGraphicData = pregancyState.dessicatedGraphicData;
+                }
                 return true;
             }
             if (resourceGatheredGraphicData != null && resourcePercent < resourceGatheredActiveUntil)

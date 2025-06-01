@@ -16,5 +16,6 @@ namespace SituationalAnimalGraphics
     {
         public int day = 0;
         public GraphicData graphicData;
+        public GraphicData dessicatedGraphicData;
     }
 }
