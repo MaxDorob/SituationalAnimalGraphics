@@ -23,7 +23,7 @@ namespace SituationalAnimalGraphics
         internal static bool TryGetSeasonalGraphic(this Pawn pawn, out GraphicData result, out GraphicData dessicated, out EffecterDef effecter)
         {
             if (pawn.ageTracker.CurKindLifeStage is SeasonalGraphics seasonalGraphics) {
-                var map = pawn.Map;
+                var map = pawn.MapHeld ?? pawn.Corpse?.MapHeld;
                 var pregnancy = pawn.health.hediffSet.GetFirstHediff<Hediff_Pregnant>();
                 var pregnancyDay = pregnancy == null ? -1 : pawn.RaceProps.gestationPeriodDays * pregnancy.GestationProgress;
                 var countOfYoung = pregnancy == null ? -1 : 1;
