@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="AEXP_Koala"]/lifeStages/li[3]</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="AEXP_Koala"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+				<pregnancyGraphicsByCount>
+					<li>
+						<!--One and more-->
+						<graphicsByDays>
+							<li>
+								<graphicData>
+									<texPath>Things/Pawn/Animal/AEXP_Koala/AEXP_Koala</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>1.6</drawSize>
+									<shadowData>
+										<volume>(0.5, 0.5, 0.5)</volume>
+										<offset>(0,0,-0.3)</offset>
+									</shadowData>
+								</graphicData>
+								<dessicatedGraphicData>
+									<texPath>Things/Pawn/Animal/AEXP_Koala/AEXP_Dessicated_Koala</texPath>
+									<drawSize>1.6</drawSize>
+								</dessicatedGraphicData>
+							</li>
+							<li>
+								<day>4</day>
+								<graphicData>
+									<texPath>Things/Pawn/Animal/Koala/AEXP_KoalaJoey1</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>1.6</drawSize>
+									<shadowData>
+										<volume>(0.5, 0.5, 0.5)</volume>
+										<offset>(0,0,-0.3)</offset>
+									</shadowData>
+								</graphicData>
+								<dessicatedGraphicData>
+									<texPath>Things/Pawn/Animal/Koala/AEXP_Dessicated_KoalaJoey1</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>1.6</drawSize>
+								</dessicatedGraphicData>
+							</li>
+							<li>
+								<day>7</day>
+								<graphicData>
+									<texPath>Things/Pawn/Animal/Koala/AEXP_KoalaJoey2</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>1.6</drawSize>
+									<shadowData>
+										<volume>(0.5, 0.5, 0.5)</volume>
+										<offset>(0,0,-0.3)</offset>
+									</shadowData>
+								</graphicData>
+								<dessicatedGraphicData>
+									<texPath>Things/Pawn/Animal/Koala/AEXP_Dessicated_KoalaJoey2</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>1.6</drawSize>
+								</dessicatedGraphicData>
+							</li>
+						</graphicsByDays>
+					</li>
+				</pregnancyGraphicsByCount>
+
+			</summer>
+
+		</value>
+	</Operation>
+
+</Patch>
