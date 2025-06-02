@@ -27,7 +27,7 @@ namespace SituationalAnimalGraphics
                 var pregnancy = pawn.health.hediffSet.GetFirstHediff<Hediff_Pregnant>();
                 var pregnancyDay = pregnancy == null ? -1 : pawn.RaceProps.gestationPeriodDays * pregnancy.GestationProgress;
                 var countOfYoung = pregnancy == null ? -1 : 1;
-                var season = Utils.GetSeason(map, Find.TickManager.TicksAbs);
+                var season = Utils.GetSeason(map, pawn.Corpse?.spawnedTick ?? Find.TickManager.TicksAbs);
                 var day = GenLocalDate.DayOfSeason(pawn) + 1;
                 bool tamed = pawn.Faction != null;
                 bool female = pawn.gender == Gender.Female;
