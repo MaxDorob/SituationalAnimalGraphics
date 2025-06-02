@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>/Defs/PawnKindDef[defName="AEXP_Kangaroo"]/lifeStages/li[3]</xpath>
+		<attribute>Class</attribute>
+		<value>SituationalAnimalGraphics.SeasonalGraphics</value>
+	</Operation>
+
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="AEXP_Kangaroo"]/lifeStages/li[3]</xpath>
+		<value>
+			<summer>
+				<pregnancyGraphicsByCount>
+					<li>
+						<!--One and more-->
+						<graphicsByDays>
+							<li>
+								<graphicData>
+									<texPath>Things/Pawn/Animal/AEXP_Kangaroo/AEXP_Kangaroo</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>2.25</drawSize>
+									<shadowData>
+										<volume>(0.5, 0.5, 0.5)</volume>
+										<offset>(0,0,-0.3)</offset>
+									</shadowData>
+								</graphicData>
+							</li>
+							<li>
+								<day>4</day>
+								<graphicData>
+									<texPath>Things/Pawn/Animal/Kangaroo/AEXP_KangarooPouch1</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>2.25</drawSize>
+									<shadowData>
+										<volume>(0.5, 0.5, 0.5)</volume>
+										<offset>(0,0,-0.3)</offset>
+									</shadowData>
+								</graphicData>
+								<dessicatedGraphicData>
+									<texPath>Things/Pawn/Animal/Kangaroo/AEXP_Dessicated_KangarooPouch1</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>2.25</drawSize>
+								</dessicatedGraphicData>
+							</li>
+							<li>
+								<day>7</day>
+								<graphicData>
+									<texPath>Things/Pawn/Animal/Kangaroo/AEXP_KangarooPouch2</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>2.25</drawSize>
+									<shadowData>
+										<volume>(0.5, 0.5, 0.5)</volume>
+										<offset>(0,0,-0.3)</offset>
+									</shadowData>
+								</graphicData>
+								<dessicatedGraphicData>
+									<texPath>Things/Pawn/Animal/Kangaroo/AEXP_Dessicated_KangarooPouch2</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+									<drawSize>2.25</drawSize>
+								</dessicatedGraphicData>
+							</li>
+						</graphicsByDays>
+					</li>
+				</pregnancyGraphicsByCount>
+
+			</summer>
+
+		</value>
+	</Operation>
+
+</Patch>
